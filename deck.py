@@ -11,9 +11,9 @@ class Deck:
 				self.sabbacDeck.add(Card(value, suit))
 			
 			#using a dictionary here is easier than using a list
-			dicCommonFaces = {12:"Commander"
-							  13:"Mistress"
-							  14:"Master"
+			dicCommonFaces = {12:"Commander",
+							  13:"Mistress",
+							  14:"Master",
 							  15:"Ace"}
 			
 			for value in range(12,16): #add the minor face cards
