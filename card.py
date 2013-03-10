@@ -20,7 +20,7 @@ class Suit:
 					"f":"Flasks",
 					"b":"Sabres",
 					"t":"Staves"}
-		if (suitChar >= 5) or (suitNum < 0):
+		if suitChar not in {"0", "c", "f", "b", "t"}: 
 			raise Exception ("suitChar must be between 0 and 5!")
 		else:
 			self.suitCode = suitChar
