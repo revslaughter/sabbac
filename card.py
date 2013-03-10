@@ -6,7 +6,7 @@ class Suit:
 	"""
 	def __init__(self, suitChar):
 		"""
-		init with a suit Charber, 0 to 5.
+		init with a suit Char, 0 to 5.
 		"0" -> Face cards, no particular suit
 		"c" -> Coins
 		"f" -> Flasks
@@ -21,7 +21,7 @@ class Suit:
 					"b":"Sabres",
 					"t":"Staves"}
 		if suitChar not in {"0", "c", "f", "b", "t"}: 
-			raise Exception ("suitChar must be between 0 and 5!")
+			raise Exception ("Invalid Suit char! See help for details.")
 		else:
 			self.suitCode = suitChar
 	def __repr__(self):
@@ -32,14 +32,9 @@ class Card:
 	Cards are the atom of the game.
 	They will be the body from which decks and hands are built.
 	"""
-	def __init__(self, value, suit=0, name=""):
+	def __init__(self, value, cardSuit=0, name=""):
 		if abs(value) < 23:
 			self.cardValue = value
 		else:
 			raise Exception("Provide a valid value for this card!")
-		self.cardSuit = getSuit(suit)
-	def getSuit(suitChar):
-		if suitChar in {"0", "c", "f", "b", "t"}: 
-			return theSuit = suit(suitChar)
-		else:
-			raise Exception("Invalid Suit Code!") 
+		self.cardSuit = Suit(cardSuit) 
