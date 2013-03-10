@@ -37,7 +37,10 @@ class Deck:
 		Since the sabbacDeck object is a set, the pop method
 		will return a random card. This just wraps that.
 		"""
-		return self.sabbacDeck.pop()
+		if self.sabbacDeck == set(): #If the deck is empty...
+			raise Exception("Deck is empty!")
+		else:
+			return self.sabbacDeck.pop()
 	def cardPut(self, returningCard):
 	 	"""
 		Places a card into the deck
