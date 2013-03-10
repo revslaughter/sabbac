@@ -14,12 +14,15 @@ class Hand:
 		self.handCards = []
 		self.score = 0
 	def updateScore(self):
+		"""Gives total value of all cards in the hand"""
 		runningTotal = 0
 		for playingCard in self.handCards:
 			runningTotal += playingCard.cardValue
 		self.score = runningTotal
 	def cardGet(self, incomingCard, desiredIndex = -1):
+		"""Recieves a card and adds it to the hand"""
 		self.handCards.insert(desiredIndex, incomingCard)
 	def cardGive(self, cardIndex):
+		"""Returns and removes a card from the hand"""
 		return self.handCards.pop(cardIndex)	
 
