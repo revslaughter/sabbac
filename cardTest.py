@@ -21,4 +21,7 @@ print(cardTry(4, "U"))
 
 theDeck = Deck()
 
-
+counter = 0
+for cardThing in theDeck.sabbacDeck:
+	counter += 1
+	print("{0}: {1}".format(counter, cardThing))

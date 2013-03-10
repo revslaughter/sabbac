@@ -18,8 +18,8 @@ class Deck:
 			
 			for value in range(12,16): #add the minor face cards
 				self.sabbacDeck.add(Card(value,suit,dicCommonFaces[value]))
-		putTheFaceCards()
-		putTheFaceCards()
+		self.putTheFaceCards()
+		self.putTheFaceCards()
 		#This happens twice so that there are 2 copies of each face card
 
 	def putTheFaceCards(self):

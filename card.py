@@ -32,9 +32,18 @@ class Card:
 	Cards are the atom of the game.
 	They will be the body from which decks and hands are built.
 	"""
-	def __init__(self, value, cardSuit=0, name=""):
+	def __init__(self, value, cardSuit="0", name=""):
 		if abs(value) < 23:
 			self.cardValue = value
 		else:
 			raise Exception("Provide a valid value for this card!")
 		self.cardSuit = Suit(cardSuit) 
+		self.cardName = name
+	def __repr__(self):
+		if self.cardSuit.suitCode != "0":
+			if self.cardName == "":
+				return "{0} of {1}".format(self.cardValue, self.cardSuit)
+			else:
+				return "{0} of {1}".format(self.cardName, self.cardSuit)
+		else:
+			return self.cardName
