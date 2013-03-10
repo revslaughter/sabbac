@@ -38,7 +38,7 @@ class Card:
 			raise Exception("Provide a valid value for this card!")
 		self.cardSuit = getSuit(suit)
 	def getSuit(suitChar):
-		if (suitChar in set(["0", "c", "f", "b", "t"]): 
+		if suitChar in {"0", "c", "f", "b", "t"}: 
 			return theSuit = suit(suitChar)
 		else:
 			raise Exception("Invalid Suit Code!") 
