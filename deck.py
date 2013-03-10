@@ -18,7 +18,11 @@ class Deck:
 			
 			for value in range(12,16): #add the minor face cards
 				self.sabbacDeck.add(Card(value,suit,dicCommonFaces[value]))
-		#Now we add the special face cards
+		putTheFaceCards()
+		putTheFaceCards()
+		#This happens twice so that there are 2 copies of each face card
+
+	def putTheFaceCards(self):
 		self.sabbacDeck.add(Card(-2, "0", "Queen of Air and Darkness"))
 		self.sabbacDeck.add(Card(-8, "0", "Endurance"))
 		self.sabbacDeck.add(Card(-11, "0", "Balance"))
@@ -27,24 +31,15 @@ class Deck:
 		self.sabbacDeck.add(Card(-15, "0", "The Evil One"))
 		self.sabbacDeck.add(Card(-17, "0", "The Star"))
 		self.sabbacDeck.add(Card(0, "0", "The Idiot"))
-		#Put those cards in again, there are 2 copies. Maybe we make a method that does this
-		#and call it twice? I don't know, it seems like such a simple thing
-		self.sabbacDeck.add(Card(-2, "0", "Queen of Air and Darkness"))
-		self.sabbacDeck.add(Card(-8, "0", "Endurance"))
-		self.sabbacDeck.add(Card(-11, "0", "Balance"))
-		self.sabbacDeck.add(Card(-13, "0", "Demise"))
-		self.sabbacDeck.add(Card(-14, "0", "Moderation"))
-		self.sabbacDeck.add(Card(-15, "0", "The Evil One"))
-		self.sabbacDeck.add(Card(-17, "0", "The Star"))
-		self.sabbacDeck.add(Card(0, "0", "The Idiot"))
+
 	def draw(self):
 		"""
 		Since the sabbacDeck object is a set, the pop method
 		will return a random card. This just wraps that.
 		"""
 		return self.sabbacDeck.pop()
-	def cardPut(self, returningCard())
+	def cardPut(self, returningCard):
 	 	"""
-		Places a card back into the deck
+		Places a card into the deck
 	 	"""
 	 	self.sabbacDeck.add(returningCard)

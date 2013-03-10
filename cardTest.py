@@ -1,4 +1,5 @@
 from card import Suit, Card
+from deck import Deck
 
 def cardTry(val, su="0", name=""):
 	try:
@@ -17,3 +18,7 @@ print("Value 5 and suit c, Name")
 print(cardTry(5, "c", "Name"))
 print("Value 4 and suit U")
 print(cardTry(4, "U"))
+
+theDeck = Deck()
+
+
