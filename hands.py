@@ -4,6 +4,8 @@ from card import Card, Suit
 class Hand:
 	"""
 	A hand is a list of sabbac cards that can be evaluated.
+	Hand.handCards is a list of cards in the hand.
+	Hand.score is the current score of the hand.
 	"""
 	def __init__(self):
 		"""
@@ -22,7 +24,9 @@ class Hand:
 	def cardGet(self, incomingCard, desiredIndex = -1):
 		"""Recieves a card and adds it to the hand"""
 		self.handCards.insert(desiredIndex, incomingCard)
+		self.updateScore()
 	def cardGive(self, cardIndex):
 		"""Returns and removes a card from the hand"""
-		return self.handCards.pop(cardIndex)	
-
+		holdCard = self.handCards.pop(cardIndex)	
+		self.updateScore()
+		return holdCard
