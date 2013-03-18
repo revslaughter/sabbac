@@ -17,7 +17,7 @@ class Pot:
 		"""Removes and returns the input value, if available"""
 		if (amount < 0):
 			raise Exception("Cannot remove negative values from the pot!")
-		else if ((self.value - amount) < 0):
+		elif ((self.value - amount) < 0):
 			raise Exception("Cannot take more than what is in the pot, the pot currently has {0}.".format(self.value))
 		else:
 			self.value -= amount
