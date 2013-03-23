@@ -9,7 +9,7 @@ def getPlayerList():
 	listToReturn = []
 	while not areYouDone:
 		thisPlayerName = input("Player Name? ")
-		listToReturn.append(Player(thisPlayerName), 20)
+		listToReturn.append(Player(thisPlayerName, 20))
 		answer = input("Done Adding Players? (y/n)")
 		if answer == "y":
 			areYouDone = True
