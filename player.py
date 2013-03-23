@@ -11,6 +11,7 @@ class Player:
 		self.name = playerName
 		self.hand = startHand
 	def bet(amount, betCondition):
-		bufferVal = self.gold.remove(amount)
-		return bufferVal
+		if betCondition:
+			bufferVal = self.gold.remove(amount)
+			return bufferVal
 	
