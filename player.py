@@ -6,7 +6,7 @@ class Player:
 	"""
 	Players are objects that play Sabbacc
 	"""
-	def __init__(self, playerName="", startAmt=0, startHand=None):
+	def __init__(self, playerName="", startAmt=0, startHand=Hand()):
 		self.gold = Pot(startAmt)
 		self.name = playerName
 		self.hand = startHand
