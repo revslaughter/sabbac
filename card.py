@@ -39,6 +39,7 @@ class Card:
 			raise Exception("Provide a valid value for this card!")
 		self.cardSuit = Suit(cardSuit) 
 		self.cardName = name
+        self.static = False
 	def __repr__(self):
 		if self.cardSuit.suitCode != "0":
 			if self.cardName == "":
@@ -47,3 +48,5 @@ class Card:
 				return "{0} of {1}".format(self.cardName, self.cardSuit)
 		else:
 			return self.cardName
+    def staticSwitch(self):
+        self.static = not self.static
