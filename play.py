@@ -5,6 +5,8 @@ from hands import Hand
 from pot import Pot
 import random
 
+gameDeck = Deck()
+
 def getPlayerList():
 	areYouDone = False
 	listToReturn = []
@@ -40,7 +42,11 @@ def shiftingPhase(hand, deck):
 		hand.cardGet(deck.draw())
 
 def drawingPhase(player):
-	pass
+	yesOrNo = {"y":True, "n":False}
+	if yesOrNo[input("Hit? (y/n)")]:
+		player.hand.cardGet(gameDeck.draw())
+	else:
+		pass
 
 def showPlayers(playerList):
 	for person in playerList:
@@ -51,14 +57,11 @@ def showPlayers(playerList):
 		print("    Pot Amount: {0}".format(person.gold.value))
 
 if (__name__=="__main__"):
-	gameOver = False
 	playerList = getPlayerList()
 	roundPot = Pot()
 	sabbacPot = Pot()
-	gameDeck = Deck()
 	
 	dealCards(playerList, gameDeck)
-
-	while not gameOver:
-		print("\n".join([repr(p) for p in playerList]))
-		gameOver = True #Testing Testing...
+	rounds = range(int(input("How many Rounds? ")))
+	for roun in rounds:
+		doARound(playerList)
