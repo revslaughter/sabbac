@@ -16,9 +16,9 @@ class Pot:
     def remove(self, amount):
         """Removes and returns the input value, if available"""
         if (amount < 0):
-            raise Exception("Cannot remove negative values from the pot!")
+            raise ValueError("Cannot remove negative values from the pot!")
         elif ((self.value - amount) < 0):
-            raise Exception("Cannot take more than what is in the pot, the pot currently has {0}.".format(self.value))
+            raise ValueError("Cannot take more than what is in the pot, the pot currently has {0}.".format(self.value))
         else:
             self.value -= amount
             return amount		

@@ -30,7 +30,7 @@ class Suit:
 class Card:
     """
     Cards are the atom of the game.
-    They will be the body from which decks and hands are built.
+    They will be the cell from which decks and hands are built.
     """
     def __init__(self, value, cardSuit="0", name=""):
         if abs(value) < 23:
